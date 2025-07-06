@@ -111,6 +111,7 @@ export default class Settings {
     static KEY_ENABLE_SMART_WINDOW_BORDER_RADIUS =
         'enable-smart-window-border-radius';
     static KEY_QUARTER_TILING_THRESHOLD = 'quarter-tiling-threshold';
+    static KEY_EDGE_TILING_OFFSET = 'edge-tiling-offset';
     static KEY_ENABLE_TILING_SYSTEM_WINDOWS_SUGGESTIONS =
         'enable-tiling-system-windows-suggestions';
     static KEY_ENABLE_SNAP_ASSISTANT_WINDOWS_SUGGESTIONS =
@@ -356,6 +357,14 @@ export default class Settings {
 
     static set QUARTER_TILING_THRESHOLD(val: number) {
         set_unsigned_number(Settings.KEY_QUARTER_TILING_THRESHOLD, val);
+    }
+
+    static get EDGE_TILING_OFFSET(): number {
+        return get_unsigned_number(Settings.KEY_EDGE_TILING_OFFSET);
+    }
+
+    static set EDGE_TILING_OFFSET(val: number) {
+        set_unsigned_number(Settings.KEY_EDGE_TILING_OFFSET, val);
     }
 
     static get WINDOW_BORDER_COLOR(): string {

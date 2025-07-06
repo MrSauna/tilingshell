@@ -298,6 +298,26 @@ export default class TilingShellExtensionPreferences extends ExtensionPreference
         );
         activeScreenEdgesGroup.add(quarterTiling);
 
+        const edgeTilingOffset = this._buildScaleRow(
+            _('Edge tiling offset'),
+            _(
+                'Offset from the screen edge to trigger edge tiling (in pixels)',
+            ),
+            (sc: Gtk.Scale) => {
+                Settings.EDGE_TILING_OFFSET = sc.get_value();
+            },
+            Settings.EDGE_TILING_OFFSET,
+            1,
+            250,
+            1,
+        );
+        Settings.bind
+            (Settings.KEY_ACTIVE_SCREEN_EDGES,
+            edgeTilingOffset,
+            'sensitive',
+        );
+        activeScreenEdgesGroup.add(edgeTilingOffset);
+
         prefsPage.add(activeScreenEdgesGroup);
 
         // Windows suggestions section

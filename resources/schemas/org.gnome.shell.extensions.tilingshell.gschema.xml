@@ -127,6 +127,11 @@
             <summary>Quarter tiling threshold</summary>
             <description>Threshold to trigger quarter tiling.</description>
         </key>
+        <key name="edge-tiling-offset" type="u">
+            <default>16</default>
+            <summary>Edge tiling offset</summary>
+            <description>Offset to trigger edge tiling (left and right edge).</description>
+        </key>
         <key name="enable-window-border" type="b">
             <default>false</default>
             <summary>Enable window border</summary>
